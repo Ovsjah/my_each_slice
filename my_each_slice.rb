@@ -8,7 +8,7 @@ module Enumerable
 
     if block_given?
       collection =
-        if [Range, Hash].any? { |c| self.class == c }
+        if [Range, Hash].include? self.class
           self.to_a
         else
           self
